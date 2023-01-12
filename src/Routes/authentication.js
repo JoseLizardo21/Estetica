@@ -27,7 +27,7 @@ router.post('/createUsers',isLoggedIn ,async(req, res)=>{
     }
     //Aquí si es una contraseña valida
 
-     const value = await Letras(newUser.password);
+     const value = Letras(newUser.password);
      console.log(value);
 
     newUser.password = await encrypPassword(password);
