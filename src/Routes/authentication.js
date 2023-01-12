@@ -25,8 +25,7 @@ router.post('/createUsers',isLoggedIn ,async(req, res)=>{
         dni
     }
     //Aquí si es una contraseña valida
-
-
+    
     newUser.password = await encrypPassword(password);
     await pool.query('INSERT INTO users set ?', [newUser]);
     res.redirect('/home');
