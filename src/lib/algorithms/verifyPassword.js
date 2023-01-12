@@ -46,27 +46,7 @@ validation.hayArroba = (password) => {
 }
 
 validation.Letras = (password) => {
-    console.log("llegó", password)
     if (password.length >= 8) {
-<<<<<<< HEAD
-        console.log(validation.Mayusculas(password));
-        console.log(validation.Minusculas(password));
-        console.log(validation.isNumbre(password));
-        console.log(validation.hayArroba(password));
-        switch (password) {
-            case 1:
-                if (
-                    validation.Mayusculas(password) &&
-                    validation.Minusculas(password) &&
-                    validation.isNumbre(password) && 
-                    validation.hayArroba(password)
-                ) {
-                    return "Correcto";
-                }
-        
-            default:
-                break;
-=======
         if (
             validation.Mayusculas(password) == true &&
             validation.Minusculas(password) == true &&
@@ -112,7 +92,6 @@ validation.Letras = (password) => {
             return "Ingrese una letra mayuscula";
         } else {
             return "Error de contraseña";
->>>>>>> 6d8f7000fa6d20840e10348a7616d650ac3de0af
         }
     } else {
         return "Error Logitud";
