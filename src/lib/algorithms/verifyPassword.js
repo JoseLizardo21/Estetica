@@ -1,7 +1,7 @@
 const validation = {
 }
 
-validation.Mayusculas = async (password) => {
+validation.Mayusculas = (password) => {
     for (let index = 0; index < password.length; index++) {
         if (password[index] == password[index].toUpperCase()) {
             return true;
@@ -46,6 +46,7 @@ validation.hayArroba = async (password) => {
 }
 
 validation.Letras = async (password) => {
+    console.log("llegó", password)
     if (password.length >= 8) {
         console.log(validation.Mayusculas(password));
         console.log(validation.Minusculas(password));
