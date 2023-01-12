@@ -1,0 +1,12 @@
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+a:hover{
+    transform: scale(1.05);
+}
+.mainContainer{
+    background: #4568DC;  
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+}

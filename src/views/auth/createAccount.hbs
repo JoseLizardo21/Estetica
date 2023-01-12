@@ -1,0 +1,28 @@
+<div class="container-fluid d-flex justify-content-center align-items-center cardCreateAccount">
+    <form method="POST" action="/createUsers" class="card  col-md-4 col-9 p-3 shadow bg-body rounded">
+        <div class="mb-3">
+            <label for="username" class="form-label">*Nombres del nuevo usuario</label>
+            <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">*Seleccione el tipo de trabajador</label>
+            <select class="form-select" aria-label="Default select example" name="typeUser">
+                <option value="Administrador">Administrador</option>
+                <option value="Trabajador" selected>Trabajador</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">*Email del nuevo usuario</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="dni" class="form-label">*DNI del nuevo usuario</label>
+            <input type="number" class="form-control" id="dni" placeholder="DNI" name="dni" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">*Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+        </div>
+        <button class="btn btn-success">Enviar</button>
+    </form>
+</div>
