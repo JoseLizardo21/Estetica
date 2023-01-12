@@ -12,7 +12,7 @@ validation.Mayusculas = (password) => {
     return false;
 }
 
-validation.Minusculas = async (password) => {
+validation.Minusculas = (password) => {
     for (let index = 0; index < password.length; index++) {
         if (password[index] == password[index].toLowerCase()) {
             return true;
@@ -23,7 +23,7 @@ validation.Minusculas = async (password) => {
     return false;
 }
 
-validation.isNumbre = async (password) => {
+validation.isNumbre = (password) => {
     for (let index = 0; index < password.length; index++) {
         if (password.charCodeAt(index) >= 48 && password.charCodeAt(index) <= 57) {
             return true;
@@ -34,7 +34,7 @@ validation.isNumbre = async (password) => {
     return false;
 }
 
-validation.hayArroba = async (password) => {
+validation.hayArroba = (password) => {
     for (let index = 0; index < password.length; index++) {
         if (password.charCodeAt(index) == 64) {
             return true;
@@ -45,7 +45,7 @@ validation.hayArroba = async (password) => {
     return false;
 }
 
-validation.Letras = async (password) => {
+validation.Letras = (password) => {
     console.log("llegó", password)
     if (password.length >= 8) {
         console.log(validation.Mayusculas(password));
@@ -60,7 +60,7 @@ validation.Letras = async (password) => {
                     validation.isNumbre(password) && 
                     validation.hayArroba(password)
                 ) {
-                    return await "Correcto";
+                    return "Correcto";
                 }
         
             default:
