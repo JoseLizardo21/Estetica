@@ -39,7 +39,14 @@ router.post('/signin', isNotLogedIn, (req, res, next)=>{
 });
 
 router.get('/home', isLoggedIn,(req, res)=>{
-    res.render('routes/home.hbs');
+    console.log(req.user);
+    const {id, username, email} = req.user;
+    const user = {
+        id,
+        username,
+        email
+    }
+    res.render('routes/home.hbs', {user});
 });
 
 router.get('/logout', isLoggedIn, function(req, res, next) {

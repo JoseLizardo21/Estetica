@@ -25,11 +25,8 @@
                 Gestión de clientes
             </div>
         </div>
-        <div class="col">
-            <a href="/createUsers" class="card bg-white text-center">
-                Agregar trabajador
-            </a>
-        </div>
+        {{#compareUser user.username}}
+        {{/compareUser}}
         <div class="col">
             <a href="/logout" class="card bg-danger text-center">
                 Cerrar sesión
