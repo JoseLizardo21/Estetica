@@ -48,6 +48,7 @@ validation.hayArroba = (password) => {
 validation.Letras = (password) => {
     console.log("llegó", password)
     if (password.length >= 8) {
+<<<<<<< HEAD
         console.log(validation.Mayusculas(password));
         console.log(validation.Minusculas(password));
         console.log(validation.isNumbre(password));
@@ -65,11 +66,57 @@ validation.Letras = (password) => {
         
             default:
                 break;
+=======
+        if (
+            validation.Mayusculas(password) == true &&
+            validation.Minusculas(password) == true &&
+            validation.isNumbre(password) == true && 
+            validation.hayArroba(password) == true
+        ) {
+            return "Correcto";
+        }
+        else if ( 
+            validation.Mayusculas(password) === false && 
+            validation.Minusculas(password) == true && 
+            validation.isNumbre(password) == true && 
+            validation.hayArroba(password) == true
+        ) {
+            return "por favor una letra mayuscula";
+        } else if (
+            validation.Mayusculas(password) === true && 
+            validation.Minusculas(password) == false && 
+            validation.isNumbre(password) == true && 
+            validation.hayArroba(password) == true
+        ) {
+            return "por favor ingrese una letra minuscula";
+        } else if (
+            validation.Mayusculas(password) === true && 
+            validation.Minusculas(password) == true && 
+            validation.isNumbre(password) == false && 
+            validation.hayArroba(password) == true
+        ) {
+            return "por favor ingrese un numero";
+        } else if (
+            validation.Mayusculas(password) === true && 
+            validation.Minusculas(password) == true && 
+            validation.isNumbre(password) == true && 
+            validation.hayArroba(password) == false
+        ) {
+            return "por favor ingrese una @";
+        } else if (
+            validation.Mayusculas(password) === false && 
+            validation.Minusculas(password) == true && 
+            validation.isNumbre(password) == true && 
+            validation.hayArroba(password) == true
+        ) {
+            return "Ingrese una letra mayuscula";
+        } else {
+            return "Error de contraseña";
+>>>>>>> 6d8f7000fa6d20840e10348a7616d650ac3de0af
         }
     } else {
         return "Error Logitud";
     }
-
 }
 
 module.exports = validation;
