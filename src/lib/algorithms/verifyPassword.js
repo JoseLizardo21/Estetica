@@ -45,7 +45,8 @@ validation.hayArroba = (password) => {
     return false;
 }
 
-validation.Letras = (password) => {
+validation.Letras = async (password) => {
+    console.log("llegó", password)
     if (password.length >= 8) {
         if (
             validation.Mayusculas(password) == true &&
