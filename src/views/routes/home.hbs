@@ -1,34 +1,49 @@
 <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3 p-5">
         <div class="col">
-            <div class="card bg-white">
-                Gestion de inventario y stock
-            </div>
+            <a href="#" class="card btnMenu">
+                <div class="w-100 h-100 row ps-3">
+                    <img src="/imgs/icons/peines.png" alt="imagen" class="imgIcons">
+                    <div class="col d-flex justify-content-center align-items-center fs-3 text-center">
+                        Gestion de inventario y stock
+                    </div>
+                </div>
+            </a>            
         </div>
         <div class="col">
-            <div class="card bg-white">
-                Control de caja
-            </div>            
+            <a href="#" class="card btnMenu">
+                <div class="w-100 h-100 row ps-3">
+                    <img src="/imgs/icons/cajaRegistradora.png" alt="imagen" class="imgIcons">
+                    <div class="col d-flex justify-content-center align-items-center fs-3">
+                        Control de caja
+                    </div>
+                </div>
+            </a>            
         </div>
         <div class="col">
-            <div class="card bg-white">
-                Ingresos y gastos
-            </div>
+            <a href="#" class="card btnMenu">
+                <div class="w-100 h-100 row ps-3">
+                    <img src="/imgs/icons/monedas.png" alt="imagen" class="imgIcons">
+                    <div class="col d-flex justify-content-center align-items-center fs-3">
+                        Ingreso y gastos
+                    </div>
+                </div>
+            </a>            
         </div>
         <div class="col">
-            <div class="card bg-white">
+            <div class="card bg-white btnMenu">
                 Emisión de facturas
             </div>
         </div>
         <div class="col">
-            <div class="card bg-white">
+            <div class="card bg-white btnMenu">
                 Gestión de clientes
             </div>
         </div>
         {{#compareUser user.username}}
         {{/compareUser}}
         <div class="col">
-            <a href="/logout" class="card bg-danger text-center">
+            <a href="/logout" class="card bg-danger text-center btnMenu">
                 Cerrar sesión
             </a>
         </div>

@@ -1,0 +1,15 @@
+.btnMenu{
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.333) !important;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btnMenu:hover{
+    transform: scale(1.05);
+    color: rgb(194, 194, 194);
+}
+.imgIcons{
+    width: 90px;
+    height: 90px;
+}
