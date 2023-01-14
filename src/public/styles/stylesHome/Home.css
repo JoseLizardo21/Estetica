@@ -12,4 +12,9 @@
 .imgIcons{
     width: 90px;
     height: 90px;
+    padding: 1px;
+}
+.companyName{
+    font-family: 'Kalam', cursive !important;
+    font-size: 50px;
 }
