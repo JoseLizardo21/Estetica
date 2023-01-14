@@ -4,6 +4,7 @@ const pool = require('../database');
 const {isLoggedIn, isNotLogedIn} = require('../lib/auth');
 const {encrypPassword} = require('../lib/helpers')
 const router = Router();
+const { Letras } = require('../lib/algorithms/verifyPassword.js')
 
 //Muestra el formulario para la creación de usuarios, solo podrá ingresar el usuario SUPER ADMIN
 router.get('/createUsers', isLoggedIn,(req, res)=>{
@@ -25,7 +26,10 @@ router.post('/createUsers',isLoggedIn ,async(req, res)=>{
         dni
     }
     //Aquí si es una contraseña valida
-    
+
+     const value = Letras(newUser.password);
+     console.log(value);
+
     newUser.password = await encrypPassword(password);
     await pool.query('INSERT INTO users set ?', [newUser]);
     res.redirect('/home');
