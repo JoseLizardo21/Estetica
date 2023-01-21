@@ -1,0 +1,9 @@
+{{#if decreaseProduct}}
+    <div class="container-fluid d-flex justify-content-center align-items-center ctnFormProduct h-100">
+        <form action="/stock/decreaseProduct/{{decreaseProduct}}" class="col-8 col-md-4 card p-3" method="POST">
+            <label for="cantDecrease" class="form-label" >Cantidad a disminuir:</label>
+            <input type="number" class="form-control" name="cantDecrease" id="cantDecrease">
+            <button class="btn btn-success mt-2 mx-auto">Disminuir</button>
+        </form>
+    </div>
+{{/if}}

@@ -1,0 +1,42 @@
+<nav class="navStock d-flex justify-content-end align-items-center p-0">
+    <a href="#" class="btnNavStock aNavStock1 border border-top-0 border-start-0 border-end-0 border-success fs-5">Inventario</a>
+    <a href="/stock/stock2" class="btnNavStock aNavStock2 fs-5">Movimientos</a>
+</nav>
+<div class="mt-5 container contStock rounded overflow-auto">
+    <a href="/stock/addProduct" class="btn btn-success float-end mt-3">+ Agregar</a>
+    {{#if products}}
+    <table class="table table-striped table-secondary mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Nombre del producto</th>
+                <th scope="col">Cantidad actual</th>
+                <th scope="col">Cantidad minima que debe de haber</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+                <tr>
+                    <th>{{productName}}</th>
+                    <th>{{currentStock}}</th>
+                    <th>{{minimumStock}}</th>
+                    <th>
+                        <a href="/stock/increaseProduct/{{id}}" class="btn btn-success">aumentar</a>
+                    </th>
+                    <th>
+                        <a href="/stock/decreaseProduct/{{id}}" class="btn btn-info">disminuir</a>
+                    </th>
+                    <th>
+                        <a href="/stock/deleteProduct/{{id}}" class="btn btn-danger">quitar</a>
+                    </th>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <p class="invisible">.</p>
+    {{else}}
+    <div class="w-100 h-75 d-flex justify-content-center align-items-center">
+        <div class="mt-5 col-4 mx-auto text-center bg-warning">Debe de agregar productos</div>
+    </div>
+    <p class="invisible">.</p>
+    {{/if}}
+</div>

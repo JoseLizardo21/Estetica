@@ -1,0 +1,42 @@
+{{#if user}}
+<div class="p-0">
+    <input type="checkbox" name="checkbox-menu" id="checkbox-menu">
+    <label for="checkbox-menu" id="icon-menu"><img src="/imgs/icons/listNav.svg" alt="menu" width="45px"></label>
+    <nav class="colNav bg-white p-0 d-flex flex-column justify-content-center">
+        <ul class="h-75 d-flex flex-column justify-content-around ulNav">
+            <li>
+                <img src="/imgs/icons/home.svg" alt="iconHome" class="iconsNav">
+                <a href="#">Inicio</a>
+            </li>
+            <li>
+                <img src="/imgs/icons/styler.svg" alt="iconHome" class="iconsNav">
+                <a href="/stock">Gestion de inventario</a>
+            </li>
+            <li>
+                <img src="/imgs/icons/control.svg" alt="iconHome" class="iconsNav">
+                <a href="#">Control de caja</a>
+            </li>
+            <li>
+                <img src="/imgs/icons/money.svg" alt="iconHome" class="iconsNav">
+                <a href="#">Ingreso y gasto</a>
+            </li>
+            <li>
+                <img src="/imgs/icons/facturas.svg" alt="iconHome" class="iconsNav">
+                <a href="/billing">Emisión de facturas</a>
+            </li>
+            <li>
+                <img src="/imgs/icons/tune.svg" alt="iconHome" class="iconsNav">
+                <a href="#">Gestión de clientes</a>
+            </li>
+            <li>
+                <img src="/imgs/icons/workers.svg" alt="iconHome" class="iconsNav">
+                <a href="/workers/allworkers">Trabajadores</a>
+            </li>
+            <li>
+                <img src="/imgs/icons/logout.svg" alt="iconHome" class="iconsNav">
+                <a href="/logout">Cerras sesión</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{{/if}}

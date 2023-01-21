@@ -30,6 +30,7 @@ app.use(session({
     saveUninitialized: false,
     store: new MySQLStore(database),
 }))
+app.use(flash());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(passport.initialize());
@@ -37,6 +38,10 @@ app.use(passport.session());
 
 //Global variables 
 app.use((req,res,next)=>{
+    app.locals.message = req.flash('message');
+    app.locals.forms = req.flash('forms');
+    app.locals.increaseProduct = req.flash('increaseProduct');
+    app.locals.decreaseProduct = req.flash('decreaseProduct');
     app.locals.user = req.user;
     next();
 });

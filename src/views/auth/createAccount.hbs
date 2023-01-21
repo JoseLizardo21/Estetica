@@ -1,4 +1,8 @@
-<div class="container-fluid d-flex justify-content-center align-items-center cardCreateAccount">
+<nav class="navStock d-flex justify-content-end align-items-center p-0">
+    <a href="/workers/allWorkers" class="btnNavStock aNavStock2 fs-5">Trabajadores</a>
+    <a href="#" class="btnNavStock border border-top-0 border-start-0 border-end-0 border-success aNavStock1 fs-5">Agregar</a>
+</nav>
+<div class="container-fluid d-flex justify-content-center align-items-center mt-5">
     <form method="POST" action="/createUsers" class="card  col-md-4 col-9 p-3 shadow bg-body rounded">
         <div class="mb-3">
             <label for="username" class="form-label">*Nombres del nuevo usuario</label>
@@ -23,6 +27,6 @@
             <label for="password" class="form-label">*Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
         </div>
-        <button class="btn btn-success">Enviar</button>
+        <button class="btn btn-success">Agregar</button>
     </form>
 </div>

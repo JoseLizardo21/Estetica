@@ -1,4 +1,10 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: black;
+}
 .mainContainer{
-    background: #4568DC;  
-    background: linear-gradient(to right, #B06AB3, #4568DC);
+    background-color: rgb(241, 241, 241);
 }

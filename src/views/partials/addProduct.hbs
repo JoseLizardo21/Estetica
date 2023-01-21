@@ -1,0 +1,13 @@
+{{#if forms}}
+    <div class="container-fluid d-flex justify-content-center align-items-center ctnFormProduct h-100">
+        <form action="/stock/addProduct" class="col-8 col-md-4 card p-3" method="POST">
+            <label for="productName" class="form-label">Nombre del producto</label>
+            <input type="text" id="productName" name="productName" class="form-control">
+            <label for="cantidad" class="form-label" >Cantidad agregada:</label>
+            <input type="number" class="form-control" name="cantidad" id="cantidad">
+            <label for="cantMin" class="form-label">Cantidad minima que debe haber:</label>
+            <input type="number" class="form-control" id="cantMin" name="cantMin">
+            <button class="btn btn-success mt-2 mx-auto">Agregar</button>
+        </form>
+    </div>
+{{/if}}

@@ -13,11 +13,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
     {{!!--styles css--}}
-    <link rel="stylesheet" href="/styles/StylesAuth/styleCreateUser.css">
-    <link rel="stylesheet" href="/styles/MainContainer.css">
-    <link rel="stylesheet" href="styles/stylesHome/Home.css">
+    <link rel="stylesheet" href="/styles/StylesAuth/styleCreateUser.css" type="text/css">
+    <link rel="stylesheet" href="/styles/MainContainer.css" type="text/css">
+    <link rel="stylesheet" href="/styles/stylesHome/Home.css" type="text/css">
+    <link rel="stylesheet" href="/styles/stylesStock/stock.css" type="text/css">
+    <link rel="stylesheet" href="/styles/stylesNav/nav.css">
 </head>
 <body class="mainContainer">
-    {{{body}}}
+    {{> message}}
+    {{> increaseProduct}}
+    {{> decreaseProduct}}
+    {{> addProduct}}
+    <div class="d-flex flex-row">
+        {{> navigation}}
+        <div class="col">
+            {{{body}}}
+        </div>
+    </div>
 </body>
 </html>

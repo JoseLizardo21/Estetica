@@ -1,0 +1,34 @@
+<nav class="navStock d-flex justify-content-end align-items-center p-0">
+    <a href="#" class="btnNavStock aNavStock1 border border-top-0 border-start-0 border-end-0 border-success fs-5">Trabajadores</a>
+    <a href="/createUsers" class="btnNavStock aNavStock2 fs-5">Agregar</a>
+</nav>
+<div class="px-4">
+    {{#if users}}
+    <table class="table table-striped table-secondary mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Nombre del trabajador</th>
+                <th scope="col">Email</th>
+                <th scope="col">Dni</th>
+                <th scope="col">Tipo de usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+                <tr>
+                    <th>{{username}}</th>
+                    <th>{{email}}</th>
+                    <th>{{dni}}</th>
+                    <th>{{typeUser}}</th>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <p class="invisible">.</p>
+    {{else}}
+    <div class="w-100 h-75 d-flex justify-content-center align-items-center">
+        <div class="mt-5 col-4 mx-auto text-center bg-warning">Debe de agregar productos</div>
+    </div>
+    <p class="invisible">.</p>
+    {{/if}}
+</div>

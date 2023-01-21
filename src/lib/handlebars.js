@@ -15,5 +15,8 @@ helpersHandlebars.compareUser = (username)=>{
     }
     return null;
 }
+helpersHandlebars.ifNavigation = ()=>{
+    
+}
 module.exports = helpersHandlebars;
 

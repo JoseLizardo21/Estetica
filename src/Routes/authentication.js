@@ -4,7 +4,7 @@ const pool = require('../database');
 const {isLoggedIn, isNotLogedIn} = require('../lib/auth');
 const {encrypPassword} = require('../lib/helpers')
 const router = Router();
-const { Letras } = require('../lib/algorithms/verifyPassword.js')
+const {verifyPassword} = require('../lib/algorithms/verifyPassword.js')
 
 //Muestra el formulario para la creación de usuarios, solo podrá ingresar el usuario SUPER ADMIN
 router.get('/createUsers', isLoggedIn,(req, res)=>{
@@ -26,13 +26,21 @@ router.post('/createUsers',isLoggedIn ,async(req, res)=>{
         dni
     }
     //Aquí si es una contraseña valida
-
-     const value = Letras(newUser.password);
-     console.log(value);
-
-    newUser.password = await encrypPassword(password);
-    await pool.query('INSERT INTO users set ?', [newUser]);
-    res.redirect('/home');
+    const value = verifyPassword(req, newUser.password);
+    if(value){
+        const row = await pool.query("SELECT * FROM users WHERE dni = ?", [dni]);
+        if(row.length == 0){
+            newUser.password = await encrypPassword(password);
+            await pool.query('INSERT INTO users set ?', [newUser]);
+            req.flash("message","Usuario creado correctamente");
+            res.redirect('/home');
+        }else{
+            req.flash("message", "El usuario ya ha sido registrado anteriormente");
+            res.redirect('/createUsers');
+        }
+    }else{
+        res.redirect('/createUsers');
+    }
 });
 
 router.post('/signin', isNotLogedIn, (req, res, next)=>{
@@ -43,7 +51,6 @@ router.post('/signin', isNotLogedIn, (req, res, next)=>{
 });
 
 router.get('/home', isLoggedIn,(req, res)=>{
-    console.log(req.user);
     const {id, username, email} = req.user;
     const user = {
         id,

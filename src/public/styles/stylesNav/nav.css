@@ -1,0 +1,44 @@
+ul{
+    list-style: none;
+}
+.colNav{
+    width: 300px;
+    height: 100vh;
+    transition: all 0.5s;
+}
+.iconsNav{
+    width: 30px;
+}
+.ulNav > li > img{
+    margin-right: 10px;
+}
+.ulNav > li:hover{
+    transform: scale(1.1);
+}
+
+#checkbox-menu{
+    display: none;
+}
+#icon-menu{
+    position: absolute;
+    margin-left: 245px;
+    display: none;
+    transition: all 0.5s;
+    z-index: 5;
+}
+#checkbox-menu:checked ~ .colNav{
+    margin-left: -300px;
+}
+#checkbox-menu:checked ~ label{
+    margin-left: 0px;
+}
+
+@media(max-width: 1010px){
+    .colNav{
+        position: absolute;
+        z-index: 2;
+    }
+    #icon-menu{
+        display: inline;
+    }
+}
