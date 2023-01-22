@@ -15,28 +15,28 @@ ul{
 .ulNav > li:hover{
     transform: scale(1.1);
 }
-
 #checkbox-menu{
     display: none;
 }
 #icon-menu{
     position: absolute;
-    margin-left: 245px;
+    margin-left: 0px;
     display: none;
     transition: all 0.5s;
     z-index: 5;
 }
 #checkbox-menu:checked ~ .colNav{
-    margin-left: -300px;
+    margin-left: 0px;
 }
 #checkbox-menu:checked ~ label{
-    margin-left: 0px;
+    margin-left: 245px;
 }
 
 @media(max-width: 1010px){
     .colNav{
         position: absolute;
         z-index: 2;
+        margin-left: -300px;
     }
     #icon-menu{
         display: inline;
