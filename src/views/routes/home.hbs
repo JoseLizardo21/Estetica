@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/styles/stylesHome/icons.css">
-<div class="p-5" style="height: 100vh">
+<div class="p-5" style="height: 100vh; overflow-y:scroll">
     <div class="row gx-4 gy-3">
         <div class="col-12 col-md-4">
             <div class="card border border-2 border-secondary shadow">
@@ -56,4 +56,31 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <canvas id="myChart" class="col"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Enero','Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      datasets: [{
+        label: 'Gráfica de:',
+        data: [12, 19, 3, 5, 2, 3,12,20,1,2,7,11],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
 </div>

@@ -51,10 +51,11 @@ router.post('/signin', isNotLogedIn, (req, res, next)=>{
 });
 
 router.get('/home', isLoggedIn,(req, res)=>{
-    const {id, username, email} = req.user;
+    const {id, username, email, typeUser} = req.user;
     const user = {
         id,
         username,
+        typeUser,
         email
     }
     res.render('routes/home.hbs', {user});

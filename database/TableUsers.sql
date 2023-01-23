@@ -3,8 +3,8 @@ USE appEstetica;
 
 CREATE TABLE users(
     id INT(180) NOT NULL,
-    username VARCHAR(80) NOT NULL,
-    email VARCHAR(80) NOT NULL,
+    username VARCHAR(180) NOT NULL,
+    email VARCHAR(180) NOT NULL,
     dni INT(8) NOT NULL,
     typeUser VARCHAR(80) NOT NULL,
     password VARCHAR(200) NOT NULL,

@@ -1,22 +1,37 @@
 const helpersHandlebars = {}
-helpersHandlebars.compareUser = (username)=>{
-    if(username === "Admin"){
-        const element = '<div class="col">'+
-        '<a href="/createUsers" class="card btnMenu">'+
-            '<div class="w-100 h-100 row ps-3 d-flex align-items-center">'+
-                '<img src="/imgs/icons/agregarUsers.png" alt="imagen" class="imgIcons">'+
-                '<div class="col d-flex justify-content-center align-items-center fs-3 text-center">'+
-                    'Agregar Trabajador'+
-                '</div>'+
-            '</div>'+
-        '</a>'+            
-    '</div>';
-        return (element)
+helpersHandlebars.cashRegisterControl = (user)=>{
+    if(user === "SuperAdmin" || user === "Administrador"){
+        const element = 
+        '<li>'+
+        '<img src="/imgs/icons/control.svg"'+ 'alt="iconHome"class="iconsNav">'+
+        '<a href="#">Control de caja</a>'+
+        '</li>';
+        return element; 
     }
     return null;
 }
-helpersHandlebars.ifNavigation = ()=>{
-    
+helpersHandlebars.bills = (user)=>{
+    if(user === "Trabajador" || user === "Administrador"){
+        const element = 
+            '<li>'+
+                '<img src="/imgs/icons/facturas.svg" alt="iconHome"'+ 'class="iconsNav">'+
+                '<a href="/billing">Emisión de facturas</a>'+
+            '</li>';
+        return element; 
+    }
+    return null;
 }
+helpersHandlebars.incomeAndExpense = (user)=>{
+    if(user === "SuperAdmin" || user === "Administrador"){
+        const element = 
+            '<li>'+
+                '<img src="/imgs/icons/money.svg" alt="iconHome"'+ 'class="iconsNav">'+
+                '<a href="#">Ingreso y gasto</a>'+
+            '</li>';
+        return element; 
+    }
+    return null;
+} 
+
 module.exports = helpersHandlebars;
 
