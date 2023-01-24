@@ -1,9 +1,9 @@
 module.exports = {
     database: {
-        host: process.env.HOST,
-        user: process.env.USER,
-        password: process.env.PASSWORD,
-        database: process.env.DATABASE,
-        port: process.env.PORT
+        host: "containers-us-west-178.railway.app",
+        user: "root",
+        password: "wEWOgekoc9n9F5ETR2Je",
+        database: "railway",
+        port: "7587"
     }
 }
