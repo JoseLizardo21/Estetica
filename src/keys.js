@@ -1,9 +1,11 @@
+if(process.env.NODE_ENV != 'production'){
+    require('dotenv').config()
+}
 module.exports = {
     database: {
-        host: "containers-us-west-178.railway.app",
-        user: "root",
-        password: "wEWOgekoc9n9F5ETR2Je",
-        port: 7587,
-        database: "railway"
+        host: process.env.HOST,
+        user: process.env.USER,
+        password: process.env.PASSWORD,
+        database: process.env.DATABASE
     }
 }
