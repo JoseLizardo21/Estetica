@@ -6,14 +6,7 @@ const {encrypPassword} = require('../lib/helpers')
 const router = Router();
 const {verifyPassword} = require('../lib/algorithms/verifyPassword.js')
 
-//Muestra el formulario para la creación de usuarios, solo podrá ingresar el usuario SUPER ADMIN
-router.get('/createUsers', isLoggedIn,(req, res)=>{
-    if(req.user.username === "Admin"){
-        res.render('auth/createAccount.hbs');
-    }else{
-        res.redirect('/home');
-    }
-});
+
 
 //Esta es la ruta para crear un nuevo usuario
 router.post('/createUsers',isLoggedIn ,async(req, res)=>{

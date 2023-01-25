@@ -5,12 +5,16 @@
     <nav class="colNav bg-white p-0 d-flex flex-column justify-content-center">
         <ul class="h-75 d-flex flex-column justify-content-around ulNav">
             <li>
-                <img src="/imgs/icons/home.svg" alt="iconHome" class="iconsNav">
-                <a href="/home">Incio</a>
+                <a href="/home" id="iconNavHome">
+                    <img src="/imgs/icons/home.svg" alt="iconHome" class="iconsNav">
+                    Incio
+                </a>
             </li>
             <li>
-                <img src="/imgs/icons/styler.svg" alt="iconHome" class="iconsNav">
-                <a href="/stock">Gestion de inventario</a>
+                <a href="/stock" id="iconNavStock">
+                    <img src="/imgs/icons/styler.svg" alt="iconHome" class="iconsNav">
+                    Gestion de inventario
+                </a>
             </li>
             {{#cashRegisterControl user.typeUser}}
             {{/cashRegisterControl}}
@@ -25,8 +29,10 @@
                 <a href="#">Gestión de clientes</a>
             </li>
             <li>
-                <img src="/imgs/icons/workers.svg" alt="iconHome" class="iconsNav">
-                <a href="/workers/allworkers">Trabajadores</a>
+                <a href="/workers/allworkers" id="iconNavWorkers">
+                    <img src="/imgs/icons/workers.svg" alt="iconHome" class="iconsNav">
+                    Trabajadores
+                </a>
             </li>
             <li>
                 <img src="/imgs/icons/logout.svg" alt="iconHome" class="iconsNav">
@@ -35,4 +41,5 @@
         </ul>
     </nav>
 </div>
+<script src="/scripts/hoverNav.js"></script>
 {{/if}}
