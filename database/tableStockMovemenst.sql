@@ -1,4 +1,4 @@
-CREATE TABLE stockMovements(
+CREATE TABLE stockmovements(
     id INT(11) NOT NULL,
     idMovement INT(120) NOT NULL,
     author VARCHAR(120) NOT NULL,
@@ -8,8 +8,8 @@ CREATE TABLE stockMovements(
     create_at timestamp NOT NULL DEFAULT current_timestamp
 );
 
-ALTER TABLE stockMovements
+ALTER TABLE stockmovements
     ADD PRIMARY KEY (id);
 
-ALTER TABLE stockMovements
+ALTER TABLE stockmovements
     MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;

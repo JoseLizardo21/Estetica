@@ -1,5 +1,6 @@
 const {Router} = require('express');
-const {isLoggedIn, isNotLogedIn} = require('../lib/auth')
+const {isLoggedIn, isNotLogedIn} = require('../lib/auth');
+const { route } = require('./services');
 const router = Router();
 
 
@@ -11,5 +12,6 @@ router.get('/', isNotLogedIn,(req, res)=>{
 router.use('/stock', require('./stock'));
 router.use('/billing', require('./billing'));
 router.use('/workers', require('./workers'));
+router.use('/services', require('./services'));
 
 module.exports = router;
