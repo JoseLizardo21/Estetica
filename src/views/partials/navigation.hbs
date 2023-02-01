@@ -3,6 +3,9 @@
     <input type="checkbox" name="checkbox-menu" id="checkbox-menu">
     <label for="checkbox-menu" id="icon-menu"><img src="/imgs/icons/listNav.svg" alt="menu" width="45px"></label>
     <nav class="colNav bg-white p-0 d-flex flex-column justify-content-center">
+        <div class="ms-1 text-center mb-3 text-secondary">
+           Hola {{user.username}}
+        </div>
         <ul class="h-75 d-flex flex-column justify-content-around ulNav">
             <li>
                 <a href="/home" id="iconNavHome">
@@ -42,7 +45,7 @@
             </li>
             <li>
                 <img src="/imgs/icons/logout.svg" alt="iconHome" class="iconsNav">
-                <a href="/logout">Cerras sesión</a>
+                <a href="/logout">Cerrar sesión</a>
             </li>
         </ul>
     </nav>

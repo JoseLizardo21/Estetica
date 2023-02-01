@@ -1,0 +1,14 @@
+CREATE TABLE Services(
+    id INT(180) NOT NULL,
+    serviceName VARCHAR(180) NOT NULL,
+    price VARCHAR(180) NOT NULL,
+    imgName VARCHAR(180) NOT NULL,
+    idFamily INT(180) NOT NULL,
+    CONSTRAINT fk_imageService FOREIGN KEY (idFamily) REFERENCES Families(id) ON DELETE CASCADE 
+);
+
+ALTER TABLE Services 
+    ADD PRIMARY KEY(id);
+
+ALTER TABLE Services
+    MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;

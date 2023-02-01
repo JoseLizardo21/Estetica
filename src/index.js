@@ -42,6 +42,8 @@ app.use((req,res,next)=>{
     app.locals.forms = req.flash('forms');
     app.locals.increaseProduct = req.flash('increaseProduct');
     app.locals.decreaseProduct = req.flash('decreaseProduct');
+    app.locals.addServices = req.flash('addServices');
+    app.locals.addFamily = req.flash('addFamily');
     app.locals.user = req.user;
     next();
 });

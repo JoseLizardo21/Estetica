@@ -1,0 +1,18 @@
+{{#if addFamily}}
+<link rel="stylesheet" href="/styles/StylesServices/formAddFamily.css">
+<div class="formAddFamily w-100 h-100 alert d-flex justify-content-center align-items-center" >
+    <form action="/services/addFamily" method="POST" class="card col-4">
+        <div class="d-flex justify-content-end">
+            <button  data-bs-dismiss="alert" aria-label="close" class="btn-close m-1">
+            </button>
+        </div>
+        <div class="card-body">
+            <label for="addFamily" class="form-label" >Nombre de la familia:</label>
+            <input type="text" class="form-control" name="familyName" id="cantIncrease" required>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-success mt-3">Agregar</button>
+            </div>
+        </div>
+    </form>
+</div>
+{{/if}}
