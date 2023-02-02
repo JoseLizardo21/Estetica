@@ -10,17 +10,18 @@ const router = Router();
 const storage = multer.diskStorage({
     destination: path.join(__dirname, '../public/uploads'),
     filename: async(req, file, cb) =>{
-        console.log(req.body)
+/*         console.log(req.body)
         const {serviceName, price, familyName} = req.body;
         const rowsFamilies = await pool.query('SELECT * FROM Families WHERE familyName = ?', [familyName]);
-        const idFamily = rowsFamilies[0]
-        const nameImg = uuid() + path.extname(file.originalname).toLocaleUpperCase;
-        const newService = {
+        const idFamily = rowsFamilies[0] */
+        const nameImg = uuid() + path.extname(file.originalname).toLocaleUpperCase();
+        req.nameImageService = nameImg;
+/*         const newService = {
             serviceName,
             price,
             idFamily
         }
-        await pool.query('INSERT INTO Services set ?', [newService]);
+        await pool.query('INSERT INTO Services set ?', [newService]); */
         cb(null, nameImg);
     }
 });
@@ -39,11 +40,19 @@ const uploadImage = multer({
 }).single("img");
 
 router.post('/addServices', async(req, res)=>{
-    uploadImage(req, res, (err)=>{
+    uploadImage(req, res, async(err)=>{
         if(err){
             err.message = "El archivo es muy pesado"
             return res.send(err);
         };
+        const {serviceName, price, idFamily} = req.body;
+        const newService = {
+            serviceName,
+            price,
+            idFamily,
+            imgName: req.nameImageService
+        }
+        await pool.query("INSERT INTO services  set ?", [newService]);
         res.send("Se ha subido correctamente");
     });
 });

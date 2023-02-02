@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="card-img-top d-flex h-100 justify-content-center">
                 <div class="rounded border border-3"  style="width: 300px; height: 300px;">
-                    <label for="img" class="d-flex justify-content-center align-items-center text-secondary" style="height: 100%;">Hacer click para seleccionar imagen</label>
+                    <label for="img" class="d-flex justify-content-center align-items-center text-secondary" id="labelImg" style="height: 100%;">Hacer click para seleccionar imagen</label>
                     <input type="file" name="img" id="img" class="d-none">
                 </div>
             </div>
@@ -23,9 +23,9 @@
             </div>
             <div class="row p-2">
                 <label class="form-label text-secondary col">Familia</label>
-                <select class="form-select col ms-4 text-secondary" aria-label="Default select example" name="familyName" id="familyName">
+                <select class="form-select col ms-4 text-secondary" aria-label="Default select example" name="idFamily" id="idFamily">
                     {{#each addServices}}
-                        <option value={{familyName}}>{{familyName}}</option>
+                        <option value={{id}}>{{familyName}}</option>
                     {{/each}}
                 </select>
             </div>
@@ -35,4 +35,16 @@
         </div>
     </form>
 </div>
+
+<script>
+    const inputImg = document.getElementById("img");
+    const labelImg = document.getElementById("labelImg");
+    inputImg.addEventListener("change", (e)=>{
+        const image = inputImg.files[0];
+        const objectUrlImage = URL.createObjectURL(image);
+        labelImg.style = `height: 100%; background-image: url(${objectUrlImage});background-position: center; background-repeat: no-repeat;
+    background-size: 100%; color: transparent !important;`
+    });
+</script>
+
 {{/if}}
