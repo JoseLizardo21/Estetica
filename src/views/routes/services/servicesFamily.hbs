@@ -1,0 +1,48 @@
+<div class="" style="height: 100vh;">
+    <div class="d-flex flex-row justify-content-around mt-3">
+        <a href="/services/addFamily" class="card col-3 text-center border-2 border-secondary shadow">
+            <div class="card-body">
+                <img src="" alt="">
+                Agregar familia
+            </div>
+        </a>
+        <a href="/services/addServices" class="card col-3 text-center border-2 border-secondary shadow">
+            <div class="card-body">
+                <img src="" alt="">
+                Agregar servicio
+            </div>
+        </a>
+    </div>
+    <div class="pt-5 px-5">
+        <div class=""><u>{{family.familyName}} > Servicios</u></div>
+        <div class="row g-4 mt-5">
+            {{#if services}}
+                {{#each services}}
+                    <div class="col-4">
+                        <div class="card border border-2 border-secondary shadow p-1 d-flex justify-content-center text-secondary" style="height: 200px;">
+                            <div class="row">
+                                <img src="/uploads/{{imgName}}" style="height: 180px; width: 180px">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="d-flex justify-content-end">
+                                            Precio: ${{price}}
+                                        </div>
+                                    </div>
+                                    <div class="col h-75 d-flex justify-content-center align-items-center">
+                                        {{serviceName}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+                {{else}}
+                    <div class="col-3">
+                        <div class="card cardsFamilies border border-2 border-secondary shadow d-flex align-items-center justify-content-center text-secondary">
+                            se debe de agregar familias
+                        </div>
+                    </div>
+            {{/if}}
+        </div>        
+    </div>
+</div>

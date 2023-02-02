@@ -15,14 +15,14 @@
         </a>
     </div>
     <div class="pt-5 px-5">
-        <div class=""><u>Familia</u></div>
+        <div class=""><u>Familias</u></div>
         <div class="row g-4 mt-5">
             {{#if families}}
                 {{#each families}}
                     <div class="col-3">
-                        <div class="card cardsFamilies border border-2 border-secondary shadow d-flex align-items-center justify-content-center text-secondary">
+                        <a href='/services/servicesFamily/{{id}}' class="card cardsFamilies border border-2 border-secondary shadow d-flex align-items-center justify-content-center text-secondary">
                             {{familyName}}
-                        </div>
+                        </a>
                     </div>
                 {{/each}}
                 {{else}}
