@@ -14,17 +14,25 @@
                 </a>
             </li>
             <li>
-                <a href="/stock" id="iconNavStock">
+                <div data-bs-toggle="collapse" data-bs-toggle="collapse" data-bs-target="#collapseGestiones" aria-expanded="false" aria-controls="collapseGestiones" id="gestionesControl">
                     <img src="/imgs/icons/styler.svg" alt="iconHome" class="iconsNav">
-                    Gestion de inventario
-                </a>
+                    Gestiones
+                </div>
             </li>
-            <li>
-                <a href="/services" id="iconNavStock">
-                    <img src="/imgs/icons/styler.svg" alt="iconHome" class="iconsNav">
-                    Gestion de servicios
-                </a>
-            </li>
+            <div class="collapse" id="collapseGestiones">
+                <li>
+                    <a href="/stock" id="iconNavStock">
+                        <img src="/imgs/icons/styler.svg" alt="iconHome" class="iconsNav">
+                        Gestion de inventario
+                    </a>
+                </li>
+                <li class="mt-2">
+                    <a href="/services" id="iconNavServices">
+                        <img src="/imgs/icons/styler.svg" alt="iconHome" class="iconsNav">
+                        Gestion de servicios
+                    </a>
+                </li>
+            </div>
             {{#cashRegisterControl user.typeUser}}
             {{/cashRegisterControl}}
 

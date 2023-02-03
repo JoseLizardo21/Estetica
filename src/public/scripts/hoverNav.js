@@ -5,8 +5,15 @@ if(url.indexOf("/home") == 0 ){
     btn.style = filtro
 }else if(url.indexOf("/stock") == 0){
     const btn = document.getElementById("iconNavStock");
-    btn.style = filtro
+    const btn2 = document.getElementById("gestionesControl");
+    btn.style = filtro;
+    btn2.style = filtro;
 }else if(url.indexOf("/workers") == 0){
     const btn = document.getElementById("iconNavWorkers");
     btn.style = filtro
+}else if(url.indexOf("/services" == 0)){
+    const btn = document.getElementById("iconNavServices");
+    const btn2 = document.getElementById("gestionesControl");
+    btn.style = filtro;
+    btn2.style = filtro;
 }

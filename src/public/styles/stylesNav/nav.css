@@ -32,6 +32,11 @@ ul{
     margin-left: 245px;
 }
 
+#collapseGestiones{
+    margin-top: -25px;
+    margin-left: 20px;
+}
+
 @media(max-width: 1010px){
     .colNav{
         position: absolute;
