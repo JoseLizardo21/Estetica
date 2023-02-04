@@ -1,0 +1,35 @@
+/*Estilos que se le agragar a la barra de busqueda por nombres*/
+.ctnInpSearch{
+    position: relative;
+}
+#searchByName{
+    box-sizing: border-box;
+    color: #191919;
+    padding: 5px 15px 5px 35px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgb(203, 203, 203);
+}
+.iconSearch{
+    color: #191919;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}   
+.btnCargaMasiva{
+    background-color: #3186fa;
+}
+.btnAddProduct{
+    background-color: #22c488;
+}
+.textFilters{
+    color: #686868;
+    font-weight: bold;
+}
+.ctnFilters{
+    margin-left: 60px;
+    margin-right: 100px;
+}

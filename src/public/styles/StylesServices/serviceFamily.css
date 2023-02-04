@@ -1,0 +1,19 @@
+.cardService{
+    height: 250px;
+}
+.imgCardServices{
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.priceService{
+    display: inline;
+    background-color: rgba(0, 0, 0, 0.653);
+    padding: 5px;
+    border-radius: 10px 0 0 10px;
+    color: white;
+}
+.textBtnModifyService{
+    font-size: 12px;
+}

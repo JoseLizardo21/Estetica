@@ -1,9 +1,10 @@
-<nav class="navStock d-flex justify-content-end align-items-center p-0">
+{{!-- <nav class="navStock d-flex justify-content-end align-items-center p-0">
     <a href="#" class="btnNavStock aNavStock1 border border-top-0 border-start-0 border-end-0 border-success fs-5">Inventario</a>
     <a href="/stock/stock2" class="btnNavStock aNavStock2 fs-5">Movimientos</a>
-</nav>
-<div class="mt-5 container contStock rounded overflow-auto">
-    <a href="/stock/addProduct" class="btn btn-success float-end mt-3">+ Agregar</a>
+</nav> --}}
+<link rel="stylesheet" href="/styles/stylesStock/stock1.css">
+<div class="container contStock rounded overflow-auto">
+    {{!-- <a href="/stock/addProduct" class="btn btn-success float-end mt-3">+ Agregar</a>
     {{#if products}}
     <table class="table table-striped table-secondary mt-5">
         <thead>
@@ -38,5 +39,29 @@
         <div class="mt-5 col-4 mx-auto text-center bg-warning">Debe de agregar productos</div>
     </div>
     <p class="invisible">.</p>
-    {{/if}}
+    {{/if}} --}}
+    <div class="d-flex justify-content-end mt-4">
+        <div class="ctnInpSearch">
+            <input type="search" name="searchByName" id="searchByName" placeholder="Busqueda por nombre">
+            <img src="/imgs/icons/search.svg" class="iconSearch">
+        </div>
+        <button class="ms-2 btn text-white btnCargaMasiva">Carga Masiva</button>
+        <button class="ms-2 btn text-white btnAddProduct">Agregar</button>
+    </div>
+
+    <div class="d-flex justify-content-around ctnFilters">
+        <div class="">
+            <label for="marca" class="textFilters">Marca</label> <br>
+            <input type="text" name="marca" id="marca">
+        </div>
+        <div class="">
+            <label for="categoria" class="textFilters">Categoría</label> <br>
+            <input type="text" name="categoria" id="categoria">
+        </div>
+        <div class="">
+            <label for="verPor" class="textFilters">Ver por</label> <br>
+            <input type="text" name="verPor" id="verPor">
+        </div>
+    </div>
+
 </div>
