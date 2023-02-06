@@ -30,6 +30,45 @@
     font-weight: bold;
 }
 .ctnFilters{
-    margin-left: 60px;
     margin-right: 100px;
+}
+.iconIncDec{
+    color: #9b9b9b;
+    font-size: 25px;
+    font-weight: 900;
+}
+.ejemplo{
+    display: inline;
+    margin-left: -20px;
+    margin-top: -8px;
+    position: absolute;
+}
+
+/* Estilos para los inputs de filtros */
+.filterInput{
+    border-radius: 10px;
+    border: 1px solid  #d7d7d7;
+}
+.filterInput:focus{
+    outline: 1px solid #888888;
+}
+/* Estilo para el boton de descargar inventario */
+.btnDownIn{
+    background-color: #fd9800;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+/* Estilos para los nombres de las columnas del invetario */
+.InvColName{
+    background-color: #f1f1f1 !important;
+}
+.InvColNameS{
+    background-color: #f1f1f1 !important;
+    border-radius: 20px 0 0 20px;
+}
+.InvColNameE{
+    background-color: #f1f1f1 !important;
+    border-radius: 0 20px 20px 0;
 }

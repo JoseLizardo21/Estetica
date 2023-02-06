@@ -48,20 +48,68 @@
         <button class="ms-2 btn text-white btnCargaMasiva">Carga Masiva</button>
         <button class="ms-2 btn text-white btnAddProduct">Agregar</button>
     </div>
-
-    <div class="d-flex justify-content-around ctnFilters">
+{{!-- El siguiente apartado es para aplicar filtros --}}
+    <div class="d-flex justify-content-evenly ctnFilters mt-3">
         <div class="">
             <label for="marca" class="textFilters">Marca</label> <br>
-            <input type="text" name="marca" id="marca">
+            <input type="text" name="marca" id="marca" class="filterInput">
         </div>
         <div class="">
             <label for="categoria" class="textFilters">Categoría</label> <br>
-            <input type="text" name="categoria" id="categoria">
+            <input type="text" name="categoria" id="categoria" class="filterInput">
         </div>
         <div class="">
             <label for="verPor" class="textFilters">Ver por</label> <br>
-            <input type="text" name="verPor" id="verPor">
+            <input type="text" name="verPor" id="verPor" class="filterInput">
         </div>
+    </div>
+
+    <div class="card mt-5 ps-4 pe-4"> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="InvColNameS">Código</th>
+                    <th scope="col" class="InvColName">Nombre del producto</th>
+                    <th scope="col" class="InvColName">Categoría</th>
+                    <th scope="col" class="InvColName">Marca</th>
+                    <th scope="col" class="InvColName">Precio</th>
+                    <th scope="col" class="InvColNameE">Stock</th>
+                </tr>
+            </thead>
+            {{#if products}}
+            {{#each products}}
+            <tbody>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="#" class="btnDownIn me-3 mb-3">Descargar inventario</a>
+                </div>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{productName}}</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>{{currentStock}}</td>
+                    <td>
+                        <a href="/stock/increaseProduct/{{id}}">
+                            <div class="iconIncDec ejemplo">
+                                +
+                            </div>
+                            Stock
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/stock/decreaseProduct/{{id}}">
+                            <div class="iconIncDec ejemplo">
+                                -
+                            </div>
+                            Stock
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+            {{/each}}
+            {{/if}}
+        </table>
     </div>
 
 </div>
