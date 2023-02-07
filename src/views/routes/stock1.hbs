@@ -46,7 +46,7 @@
             <img src="/imgs/icons/search.svg" class="iconSearch">
         </div>
         <button class="ms-2 btn text-white btnCargaMasiva">Carga Masiva</button>
-        <button class="ms-2 btn text-white btnAddProduct">Agregar</button>
+        <a href="/stock/addProduct" class="ms-2 btn text-white btnAddProduct">Agregar</a>
     </div>
 {{!-- El siguiente apartado es para aplicar filtros --}}
     <div class="d-flex justify-content-evenly ctnFilters mt-3">
@@ -77,17 +77,21 @@
                 </tr>
             </thead>
             {{#if products}}
-            {{#each products}}
-            <tbody>
                 <div class="d-flex justify-content-end mt-3">
                     <a href="#" class="btnDownIn me-3 mb-3">Descargar inventario</a>
                 </div>
-                <tr>
-                    <th scope="row">1</th>
+            {{#each products}}
+            <tbody>
+                <tr class="
+                    {{#ifCond currentStock minimumStock}}
+                        rowDec
+                    {{/ifCond}}
+                ">
+                    <th scope="row">{{code}}</th>
                     <td>{{productName}}</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
+                    <td>{{category}}</td>
+                    <td>{{brand}}</td>
+                    <td>{{price}}</td>
                     <td>{{currentStock}}</td>
                     <td>
                         <a href="/stock/increaseProduct/{{id}}">
@@ -111,5 +115,7 @@
             {{/if}}
         </table>
     </div>
-
 </div>
+<script>
+    console.log({{products}})
+</script>

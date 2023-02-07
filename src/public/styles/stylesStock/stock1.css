@@ -22,8 +22,14 @@
 .btnCargaMasiva{
     background-color: #3186fa;
 }
+.btnCargaMasiva:hover{
+    background-color: #2364c0;
+}
 .btnAddProduct{
     background-color: #22c488;
+}
+.btnAddProduct:hover{
+    background-color: #138e61;
 }
 .textFilters{
     color: #686868;
@@ -71,4 +77,8 @@
 .InvColNameE{
     background-color: #f1f1f1 !important;
     border-radius: 0 20px 20px 0;
+}
+/* estilos para cuando haya un minimo de stock en un fila */
+.rowDec{
+    background-color: rgba(170, 0, 0, 0.396);
 }

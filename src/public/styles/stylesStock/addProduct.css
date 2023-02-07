@@ -1,0 +1,22 @@
+.ctn-addProduct{
+    background-color: rgba(0, 0, 0, 0.358);
+}
+.ctnFormProduct{
+    position: absolute;
+    z-index: 4;
+}
+.windName{
+    color: #4b93fc;
+    position: absolute;
+    background-color: white;
+    margin-top: -55px;
+    display: inline;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 10px 10px 0 0;
+    margin-left: -17px;
+}
+.ejemplo{
+    font-weight: 500;
+    color: #505050;
+}

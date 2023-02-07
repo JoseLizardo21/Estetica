@@ -1,4 +1,5 @@
 {{#if forms}}
+{{!-- 
     <div class="container-fluid d-flex justify-content-center align-items-center ctnFormProduct h-100">
         <form action="/stock/addProduct" class="col-8 col-md-4 card p-3" method="POST">
             <label for="productName" class="form-label">Nombre del producto</label>
@@ -10,4 +11,54 @@
             <button class="btn btn-success mt-2 mx-auto">Agregar</button>
         </form>
     </div>
+ --}}
+<link rel="stylesheet" href="/styles/stylesStock/addProduct.css">
+<div class="container-fluid d-flex justify-content-center align-items-center ctnFormProduct h-100 ctn-addProduct alert alert-dissmissible fade show">
+    <form action="/stock/addProduct" method="post" class="col-8 col-md-8 card p-3 rounded ejemplo">
+        <div class="windName border border-bottom-0">
+            DATOS DEL PRODUCTO
+        </div>
+        <div class="row mt-4 gx-5 ps-3 pe-3">
+            <div class="col">
+                <label for="productName" class="form-label">Nombre del producto</label>
+            <input type="text" id="productName" name="productName" class="form-control"></div>
+            <div class="col">
+                <label for="productCode" class="form-label">id/Código del producto</label>
+                <input type="text" id="productCode" name="productCode" class="form-control">
+            </div>
+            <div class="col">
+                <label for="productBrand" class="form-label">Marca</label>
+                <input type="text" id="productBrand" name="productBrand" class="form-control">
+            </div>
+        </div>
+        <div class="row gx-5 ps-3 pe-3">
+            <div class="col">
+                <label for="category" class="form-label">Categoría</label>
+                <input type="text" id="category" name="category" class="form-control">
+            </div>
+            <div class="col">
+                <label for="stock" class="form-label">Stock</label>
+                <input type="text" id="stock" name="cantidad" class="form-control">
+            </div>
+            <div class="col-4">
+                <label for="cantMin" class="form-label">Cantidad minima de stock</label>
+                <input type="Number" class="form-control" name="cantMin" id="cantMin">
+            </div>
+        </div>
+        <div class="row gx-5 ps-3 pe-3">
+            <div class="col-4">
+                <label for="purchaseCost" class="form-label">Costo de compra</label>
+                <input type="text" id="pucharseCost" name="puscharseCost" class="form-control">
+            </div>
+            <div class="col-4">
+                <label for="salePrice" class="form-label">Precio de venta</label>
+                <input type="text" id="salePrice" name="price" class="form-control">
+            </div>
+        </div>
+        <div class="d-flex justify-content-between px-3 mt-4">
+            <button type="button" class="text-white fs-5 btn btn-secondary  px-4" data-bs-dismiss="alert" aria-label="Close">cerrar</button>
+            <button class="text-white fs-5 btn btn-primary px-4" type="submit">Guardar</button>
+        </div>
+    </form>
+</div>
 {{/if}}

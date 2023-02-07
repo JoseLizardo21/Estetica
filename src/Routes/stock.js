@@ -25,9 +25,13 @@ router.get('/addProduct', isLoggedIn,(req,res)=>{
     res.redirect('/stock');
 })
 router.post('/addProduct', async(req,res)=>{
-    const {productName, cantidad, cantMin} = req.body;
+    const {productName, cantidad, cantMin, price, code, productCode, category, productBrand} = req.body;
     const newRow = {
         productName,
+        price,
+        category,
+        brand: productBrand,
+        code: productCode,
         currentStock: cantidad,
         minimumStock: cantMin
     }
