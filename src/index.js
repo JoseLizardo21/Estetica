@@ -44,6 +44,7 @@ app.use((req,res,next)=>{
     app.locals.decreaseProduct = req.flash('decreaseProduct');
     app.locals.addServices = req.flash('addServices');
     app.locals.addFamily = req.flash('addFamily');
+    app.locals.addWorker = req.flash('addWorker');
     app.locals.user = req.user;
     next();
 });

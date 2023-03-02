@@ -1,0 +1,38 @@
+.tableWorkers{
+    color: #626262;
+}
+/* Estilos para boton de agregar trabajador (nuevo) */
+.btnAddWorker{
+    background-color: #30bf9f;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+.btnAddWorker:hover{
+    background-color: #2aa88d;
+}
+/* Estilos para colorear los campos de tipo de trabajador según corresponda */
+
+.btnSuperAdmin{
+    background-color: #06be4f;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.Admin{
+    background-color: #ba2226;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.Worker{
+    background-color: #0060f5;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}

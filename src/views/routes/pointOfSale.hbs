@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="styles/stylesPointOfSales/PointOfSales.css">
+<div class="container-fluid" style="height: 100vh;">
+    <div class="row">
+        <div class="col-7 p-5">
+            <div class="card p-2">
+                <div class="cardList">
+                    <div class="row fw-bold">
+                        <div class="col-2">Uds</div>
+                        <div class="col-6">Descripcion</div>
+                        <div class="col">Precio</div>
+                        <div class="col">Des</div>
+                        <div class="col">Total</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">0</div>
+                    <div class="col-6"></div>
+                    <div class="col">S/ 0</div>
+                    <div class="col"></div>
+                    <div class="col">S/ 0</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 bg-white p-3" style="height: 100vh;">
+            <div class="d-flex justify-content-end">
+                <input type="search" name="" id="" class="col-4 my-3" placeholder="Familia">
+            </div>
+            <div class="card" style="height: 250px;">
+                <div class="card-title text-center fs-6 fw-bold">Familias</div>
+                <div class="card-body d-flex flex-wrap overflow-auto">
+                    <div class="rounded bg-secondary m-1 d-flex justify-content-center align-items-center cardFamilies" id="products">
+                        Productos
+                    </div>
+                    {{#if families}}
+                        {{#each families}}
+                            <div class="rounded bg-secondary m-1 d-flex justify-content-center align-items-center btnsFamilies cardFamilies">{{familyName}}</div>
+                        {{/each}}
+                    {{/if}}
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mt-4 mb-2">
+                <input type="search" class="col-4" placeholder="Código">
+                <input type="search" class="col-4 ms-3" placeholder="Producto">
+            </div>
+            <div class="card" style="height: 300px">
+                <div class="card-title text-center fs-6 fw-bold" id="titleFamilies">Titulo</div>
+                <div class="card-body d-flex flex-wrap overflow-auto" id="listProSer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const servicesObj = [];
+    const stockObj = [];
+    const titleFamilies = document.getElementById("titleFamilies");
+    const btnProducts = document.getElementById("products");
+    const btnsFamilies = document.getElementsByClassName("btnsFamilies");
+    const list = document.getElementById("listProSer")
+    {{#each services}}
+        servicesObj.push({
+            id : "{{id}}",
+            serviceName: "{{serviceName}}",
+            price: "{{price}}",
+            imgName: "{{imgName}}",
+            idFamily: "{{idFamily}}", 
+            family: "{{family}}"
+        })
+    {{/each}}
+    {{#each stock}}
+        stockObj.push({
+            id: "{{id}}",
+            productName: "{{productName}}",
+            price: "{{price}}",
+            code: "{{code}}",
+            category: "{{category}}",
+            brand: "{{brand}}",
+            currentStock: "{{currentStock}}",
+            minimumStock: "{{minimumStock}}"
+        })
+    {{/each}}
+    btnProducts.addEventListener("click", (e)=>{
+        list.innerHTML = "";
+        titleFamilies.innerHTML = e.target.innerHTML;
+        stockObj.forEach((obj)=>{
+            list.innerHTML += "<div class='col-4'>"+
+                        "<div class='card m-1'>"+ 
+                            obj.productName +
+                                "<div class='card-body'>"+
+                                    "Hola"
+                                +"</div>"+
+                            "</div>"+
+                            
+                        "</div>"
+        })
+    });
+    for(let i = 0; i<btnsFamilies.length; i++){
+        btnsFamilies[i].addEventListener("click", (e)=>{
+            list.innerHTML = "";
+           titleFamilies.innerHTML = e.target.innerHTML;  
+           servicesObj.forEach((obj)=>{
+                if(obj.family == e.target.innerHTML){
+                    list.innerHTML += "<div class='col'>"+
+                        "<div class='card mx-1'>"+ 
+                            obj.serviceName +
+                                "<div class='card-body'>"+
+                                    `<img src='/uploads/${obj.imgName}' style="width:50px">`
+                                +"</div>"+
+                            "</div>"+
+                            
+                        "</div>"
+                }
+           });  
+        })
+    }
+</script>

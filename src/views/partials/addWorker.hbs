@@ -1,0 +1,94 @@
+{{!-- <nav class="navStock d-flex justify-content-end align-items-center p-0">
+    <a href="/workers/allWorkers" class="btnNavStock aNavStock2 fs-5">Trabajadores</a>
+    <a href="#" class="btnNavStock border border-top-0 border-start-0 border-end-0 border-success aNavStock1 fs-5">Agregar</a>
+</nav>
+<div class="container-fluid d-flex justify-content-center align-items-center mt-5">
+    <form method="POST" action="/createUsers" class="card  col-md-4 col-9 p-3 shadow bg-body rounded">
+        <div class="mb-3">
+            <label for="username" class="form-label">*Nombres del nuevo usuario</label>
+            <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">*Seleccione el tipo de trabajador</label>
+            <select class="form-select" aria-label="Default select example" name="typeUser">
+                <option value="Administrador">Administrador</option>
+                <option value="Trabajador" selected>Trabajador</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">*Email del nuevo usuario</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="dni" class="form-label">*DNI del nuevo usuario</label>
+            <input type="number" class="form-control" id="dni" placeholder="DNI" name="dni" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">*Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+        </div>
+        <button class="btn btn-success">Agregar</button>
+    </form>
+</div> --}}
+{{#if addWorker}}
+<link rel="stylesheet" href="/styles/StylesWorkers/addWorker.css">
+<div class="container-fluid d-flex justify-content-center align-items-center ctnAddWorker  alert alert-dissmissible fade show">
+    <div class="card col-7 d-flex flex-row">
+        <div class="ctnBtnClose d-flex justify-content-end">
+            <button type="button" class="text-white fs-4 px-4 fw-bold btn" data-bs-dismiss="alert" aria-label="Close">X</button>
+        </div>
+        <div class="col">
+            <form method="post" action="/createUsers" class="p-5">
+                <div class="px-3">
+                    <label class="form-label">Seleccione el tipo de documento:</label>
+                    <select class="form-select inputsAddUser" aria-label="Default select example" name="id_documento">
+                        <option value="1" selected>DNI</option>
+                        <option value="2">PASAPORTE</option>
+                    </select>
+                </div>
+                <div class="px-3">
+                    <label for="documento" class="form-label">Número de documento:</label>
+                    <input type="Number" name="documento" id="documento" class="form-control inputsAddUser" required>
+                </div>
+                <div class="px-3">
+                    <label for="username" class="form-label">Nombres:</label>
+                    <input type="Text" name="nombres" id="username" class="form-control inputsAddUser" required>
+                </div>
+                <div class="px-3">
+                    <label for="apellidos" class="form-label">Apellidos:</label>
+                    <input type="Text" name="apellidos" id="apellidos" class="form-control inputsAddUser" required>
+                </div>
+                <div class="px-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="Email" name="email" id="email" class="form-control inputsAddUser" required>
+                </div>
+                <div class="px-3">
+                    <label for="password" class="form-label">Contraseña:</label>
+                    <input type="Password" name="password" id="password" class="form-control inputsAddUser" required>
+                </div>
+                <div class="px-3">
+                    <label class="form-label">Seleccione el tipo de trabajador:</label>
+                    <select class="form-select inputsAddUser" aria-label="Default select example" name="id_tipo_Trabajador">
+                        <option value="2">Administrador</option>
+                        <option value="3" selected>Trabajador</option>
+                    </select>
+                </div>
+                <div class="px-3">
+                    <label for="direccion" class="form-label">Direccion:</label>
+                    <input type="Text" name="direccion" id="direccion" class="form-control inputsAddUser" required>
+                </div>
+                <div class="px-3">
+                    <label for="fechaNacimiento" class="form-label">Fecha de nacimiento:</label>
+                    <input type="Text" name="fecha_nacimiento" id="fechaNacimiento" class="form-control inputsAddUser" required>
+                </div>
+                <div class="px-3 mt-4 d-flex justify-content-center">
+                    <button class="text-white fw-bold btnAddUser btn w-75">CREAR USUARIO</button>
+                </div>
+            </div>
+        </form>
+        <div class="col ctnImgAddUser">
+            <div class="w-100 h-100 filtroImgAddUser"></div>
+        </div>
+    </div>
+</div>
+{{/if}}

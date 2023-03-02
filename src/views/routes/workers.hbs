@@ -1,4 +1,4 @@
-<nav class="navStock d-flex justify-content-end align-items-center p-0">
+{{!-- <nav class="navStock d-flex justify-content-end align-items-center p-0">
     <a href="#" class="btnNavStock aNavStock1 border border-top-0 border-start-0 border-end-0 border-success fs-5">Trabajadores</a>
     <a href="/workers/createUsers" class="btnNavStock aNavStock2 fs-5">Agregar</a>
 </nav>
@@ -31,4 +31,62 @@
     </div>
     <p class="invisible">.</p>
     {{/if}}
+</div> --}}
+<link rel="stylesheet" href="/styles/StylesWorkers/workers.css">
+
+<div class="container h-100 overflow-auto p-5">
+    <div class="card p-3">
+        <div class="d-flex justify-content-between mt-2">
+            <div class="btn btn-primary text-white fw-bold">
+                TRABAJADORES
+            </div>
+            <a href="/workers/createUsers" class="btnAddWorker text-white fw-bold btn" data-bs-toggle="tooltip" data-bs-title="Aquí se podrá agregar nuevos trabajadores">
+                Nuevo
+            </a>
+        </div>
+        <table class="table mt-5 tableWorkers">
+            <thead>
+                <tr>
+                    <th scope="col">Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>F. Nacimiento</th>
+                    <th>Tipo de documento</th>
+                    <th>N° Documento</th>
+                    <th>Tipo de trabajador</th>
+                </tr>
+            </thead>
+            {{#if users}}
+            <tbody>
+            {{#each users}}
+                <tr>
+                    <th>{{nombres}}</th>
+                    <th>{{apellidos}}</th>
+                    <th>{{email}}</th>
+                    <th>{{celular}}</th>
+                    <th>{{fecha_nacimiento}}</th>
+                    <th>{{tipo_Documento}}</th>
+                    <th>{{documento}}</th>
+                    <th class="px-4">
+                        <div class="
+                            {{#ifCond tipo_trabajador "SuperAdmin"}}
+                                 btnSuperAdmin
+                            {{/ifCond}}
+                            {{#ifCond tipo_trabajador "Administrador"}}
+                                Admin
+                            {{/ifCond}}
+                            {{#ifCond tipo_trabajador "Trabajador"}}
+                                Worker
+                            {{/ifCond}}
+                        ">
+                            {{tipo_trabajador}}
+                        </div>
+                    </th>
+                </tr>
+            {{/each}}
+            </tbody>
+            {{/if}}
+        </table>
+    </div>
 </div>

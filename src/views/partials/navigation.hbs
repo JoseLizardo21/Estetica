@@ -32,10 +32,19 @@
                         Gestion de servicios
                     </a>
                 </li>
+                <li class="mt-2">
+                    <a href="/clients" id="iconNavServices">
+                        <img src="/imgs/icons/styler.svg" alt="iconHome" class="iconsNav">
+                        Gestion de clientes
+                    </a>
+                </li>
             </div>
             {{#cashRegisterControl user.typeUser}}
             {{/cashRegisterControl}}
-
+            <li>
+                <img src="/imgs/icons/pointOfSale.svg" class="iconsNav">
+                <a href="/pointOfSale">Punto de venta</a>
+            </li>
             {{#incomeAndExpense user.typeUser}}
             {{/incomeAndExpense}}
 

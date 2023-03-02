@@ -1,0 +1,33 @@
+.ctnAddWorker{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.358);
+    z-index: 3;
+    height: 100vh;
+}
+.ctnBtnClose{
+    position: absolute;
+    z-index: 8;
+    width: 100%;
+}
+.btnAddUser{
+    background-color: #3186fa;
+    border-radius: 20px;
+}
+.btnAddUser:hover{
+    background-color: #2668c4;
+}
+.ctnImgAddUser{
+    background-image: url("/imgs/images/mesa.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 110% 110%;
+}
+.filtroImgAddUser{
+    position:relative;
+    z-index:4; 
+    background-color: rgba(0, 0, 255, 0.556);
+}
+.inputsAddUser{
+    border-radius: 20px;
+    width: 80%;
+}

@@ -13,5 +13,7 @@ router.use('/stock', require('./stock'));
 router.use('/billing', require('./billing'));
 router.use('/workers', require('./workers'));
 router.use('/services', require('./services'));
+router.use('/clients', require('./clients'));
+router.use('/pointOfSale', require('./pointOfSale'));
 
 module.exports = router;

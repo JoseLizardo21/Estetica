@@ -10,21 +10,26 @@ const {verifyPassword} = require('../lib/algorithms/verifyPassword.js')
 
 //Esta es la ruta para crear un nuevo usuario
 router.post('/createUsers',isLoggedIn ,async(req, res)=>{
-    const {username, email, password, typeUser, dni} = req.body;
+    const {nombres, apellidos, password, email, id_documento, documento, id_tipo_Trabajador, fecha_nacimiento, direccion} = req.body;
     const newUser = {
-        username,
+        nombres,
+        apellidos,
         email,
         password,
-        typeUser,
-        dni
+        id_documento,
+        documento,
+        id_tipo_Trabajador,
+        fecha_nacimiento,
+        id_estado: 1, 
+        direccion
     }
     //Aquí si es una contraseña valida
     const value = verifyPassword(req, newUser.password);
     if(value){
-        const row = await pool.query("SELECT * FROM users WHERE dni = ?", [dni]);
+        const row = await pool.query("SELECT * FROM trabajador WHERE documento = ?", [documento]);
         if(row.length == 0){
             newUser.password = await encrypPassword(password);
-            await pool.query('INSERT INTO users set ?', [newUser]);
+            await pool.query('INSERT INTO trabajador set ?', [newUser]);
             req.flash("message","Usuario creado correctamente");
             res.redirect('/home');
         }else{
